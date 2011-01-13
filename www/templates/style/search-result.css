@@ -1,0 +1,6 @@
+/* Search page BOF */
+#main #articles{margin-top:15px;padding:6px;}
+#main #articles ul li{width:100%;float:left;line-height:1.7em;}
+#main #articles ul li a:hover {text-decoration: underline;}
+.article-description{border-bottom:thin dotted #999;}
+/* Search page EOF */
