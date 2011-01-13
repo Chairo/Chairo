@@ -1,0 +1,6 @@
+{{ functionName("共有<span>%recordcount</span>条记录 每页<span>%pagesize</span>条记录 第<span>%pagenum</span>页/共%pagecount页 %first %prev %list %next %last %select", 20, page) }}
+{% for article in ARTICLES %}
+{{ loop.index }}<br/>
+{% endfor %}
+{{ "Twig"|rot13('prefix_') }}
+{% debug %}

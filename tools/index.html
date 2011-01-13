@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>身份证号验证-身份证号归属地验证-Chairo</title>
+</head>
+
+<body><input name="txtIdCard" id="txtIdCard" type="text" size="18" maxlength="18" /><input type="button" onclick="ShowInfo();" value="Submit" />
+<div id="txtResult"></div>
+<script src="idCard.js" type="text/javascript"></script>
+<script src="city.js" type="text/javascript"></script>
+<script language="javascript">
+var ShowInfo = function() {
+	if(document.getElementById('txtIdCard').value.length == 15 || document.getElementById('txtIdCard').value.length == 18) {
+		if(document.getElementById('txtIdCard').value.isIDCard()) {
+			var strId = document.getElementById("txtIdCard").value;
+			strId = strId.substr(0, 6);
+			if(typeof(city_id_info)=="undefined") {
+				return;
+			}
+			var strCity = strId.substr(0,4)+"00";
+			var strCityName = city_id_info[strCity];
+			if(strCityName!=null) {
+			    var strTownName = city_id_info[strId];
+    			if(strTownName!=null)
+    			{
+    				document.getElementById('txtResult').innerHTML = strCityName+strTownName;
+    			}
+		    }
+
+		} else {
+		    document.getElementById('txtResult').innerHTML = '身份证格式错误';
+		}
+	}
+};
+</script>
+</body>
+</html>

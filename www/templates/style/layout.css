@@ -1,0 +1,25 @@
+/* Public BOF*/
+body {background: white;font-family: Arial, Helvetica, sans-serif;font-size: 0.8em;color: #646464;line-height:1.8em;}
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.clearfix {display: inline-block;}
+.strong {font-weight:600;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+.txt-center {text-align:center;}
+.left {float: left;}
+.right {float: right;}
+.center {margin-left: auto;margin-right: auto;}
+/* Public EOF*/
+
+/* list table use style BOF */
+.highlight {/* highlight line background color */background:#d5fcdc;}
+.even {/* even line background color */background:#fff;}
+.mo {/* mouse enter line background color */background:#e3f1fb;}
+.odd {/* odd line background color */background:#eee;}
+.list-table th {padding:5px;background:#ddd;border-bottom:1px solid #999;font-weight:600;}
+.list-table td {padding:5px 20px 5px 5px;border-bottom:1px solid #ddd;}
+/* list table use style BOF */

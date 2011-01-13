@@ -1,0 +1,10 @@
+/* Article page BOF */
+#main #article{margin-top:15px;}
+#main #article-title h2{font-weight:600;font-size:2em;height:40px;margin-top:15px;color:#666;border-bottom:thin solid #8A8A8A;}
+#main #article-content{font-size:1em; margin:5px 10px 10px 10px;}
+#main #article-navigation{margin:0 10px 10px 10px;}
+#main #article-navigation ul li{display:inline;margin:0 10px 0 0;border:1px solid #eff2df;}
+#main #article-navigation ul li.last{margin-right:0}
+#main #article-navigation ul li a{border:1px solid #75A3ED;background:#E3F0FD;color:#1A93E3;padding:3px 5px;left:-2px;top:-2px;}
+.relational ul li{width:15%;float:left;line-height:1.7em;}
+/* Article page EOF */

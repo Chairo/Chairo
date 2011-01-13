@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="table.xsl"?>
+<root>
+	<section id="10" name="role" comment="角色" visible="1" required="1" init="1" type="single" order_no="10">
+		<description/>
+		<item field_name="id" comment="角色ID" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="int" defalut="" length="4" null="0" increment="1"/>
+			<other_attribute item_type="text" size="20" parimary="1" unique="0" index="0"/>
+		</item>
+		<item field_name="name" comment="角色名称" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="varchar" defalut="" length="50" null="0"/>
+			<other_attribute item_type="text" size="20" parimary="0" unique="0" index="0"/>
+		</item>
+		<item field_name="description" comment="角色描述" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="varchar" defalut="" length="150" null="1"/>
+			<other_attribute item_type="textarea" size="500" parimary="0" unique="0" index="0"/>
+		</item>
+		<item field_name="create_date" comment="角色创建时间" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="bigint" defalut="" length="20" null="0"/>
+			<other_attribute item_type="time" size="10" parimary="0" unique="0" index="1" update="0"/>
+		</item>
+		<item field_name="update_date" comment="角色更新时间" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="bigint" defalut="" length="20" null="0"/>
+			<other_attribute item_type="time" size="10" parimary="0" unique="0" index="1"/>
+		</item>
+		<item field_name="status" comment="角色状态" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="int" defalut="1" length="2" null="0"/>
+			<other_attribute item_type="time" size="10" parimary="0" unique="0" index="0" update="0"/>
+		</item>
+	</section>
+	<section id="10" name="record" comment="记录" visible="1" required="1" init="1" type="single" order_no="10">
+		<description/>
+		<item field_name="id" comment="记录ID" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="int" defalut="" length="4" null="0" increment="1"/>
+			<other_attribute item_type="text" size="20" parimary="1" unique="0" index="0"/>
+		</item>
+		<item field_name="article_id" comment="文章ID" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="int" defalut="" length="4" null="0" increment="0"/>
+			<other_attribute item_type="text" size="20" parimary="0" unique="0" index="1"/>
+		</item>
+		<item field_name="keywords" comment="搜索关键词" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="varchar" defalut="" length="1000" null="0"/>
+			<other_attribute item_type="text" size="500" parimary="0" unique="0" index="1"/>
+		</item>
+		<item field_name="ip" comment="IP" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="varchar" defalut="" length="15" null="0"/>
+			<other_attribute item_type="text" size="15" parimary="0" unique="0" index="0"/>
+		</item>
+		<item field_name="create_date" comment="记录创建时间" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="bigint" defalut="" length="20" null="0"/>
+			<other_attribute item_type="time" size="10" parimary="0" unique="0" index="0"/>
+		</item>
+	</section>
+</root>

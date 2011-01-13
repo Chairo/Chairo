@@ -1,0 +1,24 @@
+{% import 'functions.twig' as funcs %} {# 引用函数 #}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{{ block('web_title') }}</title>
+{{ block('meta') }} {# Meta #}
+{{ block('style') }} {# 样式表 #}
+</head>
+<body>
+{# Header BOF #}
+{% include "header.twig" with CONFIG  %} {# 包含公共头文件 #}
+{# Header EOF #}
+{# Main BOF #}
+<div id="main" class="center clearfix">
+{{ block('content') }} {# 内容 #}
+</div>
+{# Main EOF #}
+{# Footer BOF #}
+{% include "footer.twig" with CONFIG %} {# 包含尾文件 #}
+{# Footer EOF #}
+{{ block('script') }} {# 脚本 #}
+</body>
+</html>
