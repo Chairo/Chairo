@@ -1,4 +1,4 @@
-  <div id="search" class="txt-center border">{{ _keyword }}
+  <div id="search" class="txt-center border">
     <div id="search-title" class="clearfix">搜索<strong class="strong">药酒配方</strong></div>
     <form name="frmSearch" id="frmSearch" action="{{ CONFIG.web_url }}search.php" method="get" class="seach-form">
      <div id="seach-input"><input type="text" name="txtKeywords" id="txtKeywords" size="80" class="search-input" value="{% if _keyword != '' and _keyword != '全部酒方' %}{{ _keyword }}{% else %}多个搜索条件请用英文半角逗号分开{% endif %}" />
