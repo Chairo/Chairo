@@ -14,7 +14,14 @@ class Template {
         $this->t = new Twig_Environment($loader, array(
                                                  'cache'=>false,    //$config->compile_dir,
                                                  'auto_reload'=>true));
+        $lexer = new Twig_Lexer($this->t, array(
+            'tag_comment'  => array('{#', '#}'),    //注释
+            'tag_block'    => array('{%', '%}'),    //tag
+            'tag_variable' => array('{{', '}}'),    //变量
+        ));
+        $this->t->setLexer($lexer);
         $this->t->addExtension(new Twig_Extensions_Extension_Text());
+        $this->t->addExtension(new Twig_Extensions_Extension_Page());
         $this->t->addExtension(new Twig_Extensions_Extension_Debug());
         return $this->t;
     }

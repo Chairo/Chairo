@@ -71,8 +71,8 @@ foreach($_GET as $k=>$v) {
 $_pageCount = intval($_dataCount/$_pageSize)<($_dataCount/$_pageSize) ? intval($_dataCount/$_pageSize)+1 : intval($_dataCount/$_pageSize);
 
 $twig = new Template($webTempConfig);
-$twig->t->addfunction('page', new Twig_Function_Function('page', array('is_safe' => array('html'))));
 $template = $twig->t->loadTemplate('search-result.twig');
+
 $template->display(array('CONFIG' => $config,
                          'ARTICLES' => getData($dbConfig, $logConfig, $cacheConfig, $is_cache=true, $_where, $_limit, $_pageSize),
                          'HOTSEARCHS' => hotSearch($dbConfig, 10),
