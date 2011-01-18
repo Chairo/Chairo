@@ -1,0 +1,60 @@
+{% extends "base.twig" %}
+
+{% block web_title %}
+{{ SEARCH }}-{{ CONFIG.web_name }}-{{ CONFIG.web_author }}
+{% endblock web_title %}
+
+{% block meta %}
+<meta name="description" content="{{ CONFIG.web_description }}">
+{% endblock meta %}
+
+
+{% block content %}
+{# Search BOF #}{% include "search.twig" with {'_keyword':SEARCH, 'CONFIG':CONFIG, 'HOTSEARCHS':HOTSEARCHS} %}{# Search EOF #}
+<div id="articles" class="clearfix border">
+<div class="txt-center">{{ page("共有<span>%recordcount</span>条记录 每页<span>%pagesize</span>条记录 第<span>%pagenum</span>页/共%pagecount页 %first %prev %list %next %last %select", PAGE, '首页', '上页', '下页', '末页', '第%pagenum页') }}</div>
+      <ul>
+        {% for article in ARTICLES %}
+        <li>
+            <div id="article-title{{ article.id }}" class="article-title strong txt-shadow"><a href="{{ CONFIG.web_url }}{{ funcs.url(article.id) }}" title="{{ article.title }}">{{ article.title }}</a></div>
+            <div id="article-description{{ article.id }}" class="article-description indent">{{ article.description }}</div>
+        </li>
+        {% else %}
+            <li>暂无记录，反馈给{{ CONFIG.web_author }}<a href="mailto:102xing@gmail.com?subject=Null">Via Email</a> <a href="http://sighttp.qq.com/authd?IDKEY=c99a301c8a0362d539261e9cfa418e3ef8e93539f972a1a7">Via QQ</a></li>
+        {% endfor %}
+     </ul>
+<div class="txt-center">{{ page("共有<span>%recordcount</span>条记录 每页<span>%pagesize</span>条记录 第<span>%pagenum</span>页/共%pagecount页 %first %prev %list %next %last %select", PAGE, '首页', '上页', '下页', '末页', '第%pagenum页') }}</div>
+  </div>
+{% endblock content%}
+
+{% block style %}
+{% include "style.twig" with CONFIG  %} {# 包含公共样式表文件 #}
+<link rel="stylesheet" href="{{ CONFIG.web_css_url }}search-result.css" type="text/css" />
+{% endblock style %}
+
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js" type="text/javascript"></script>
+<script src="{{ CONFIG.web_js_url }}mootools-more.js" type="text/javascript"></script>
+<script src="{{ CONFIG.web_js_url }}go-top.js" type="text/javascript"></script>
+<script language="javascript">
+<!--
+document.addEvent('domready', function() {
+    $('txtKeywords').addEvent('click', function() {
+        if('多个搜索条件请用英文半角逗号分开' == this.value) {
+            this.value = '';
+    });
+    $('txtKeywords').addEvent('blur', function() {
+        if('' == this.value) {
+            this.value = '多个搜索条件请用英文半角逗号分开';
+        }
+    });
+    $('frmSearch').addEvent('submit', function() {
+        if('多个搜索条件请用英文半角逗号分开' == $('txtKeywords').value) {
+            $('txtKeywords').value = '';
+        }
+    });
+    var t = new Top();
+});
+-->
+</script>
+{% endblock script %}
