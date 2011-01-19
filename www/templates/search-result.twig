@@ -42,6 +42,7 @@ document.addEvent('domready', function() {
     $('txtKeywords').addEvent('click', function() {
         if('多个搜索条件请用英文半角逗号分开' == this.value) {
             this.value = '';
+        }
     });
     $('txtKeywords').addEvent('blur', function() {
         if('' == this.value) {
