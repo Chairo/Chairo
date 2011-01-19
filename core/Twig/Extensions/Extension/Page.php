@@ -62,9 +62,9 @@ function page($v, array $page, $first, $prev, $next, $last, $select) {
 
 	for($p=$pageStart; $p<=$pageEnd; $p++) {
 		if($_page==$p) {
-		    $pl=$pl."<span>$p</span>";
+		    $pl=$pl."<span>$p</span>&nbsp;";
 		} else {
-		    $pl=$pl." <a href=\"$_pagelink$p\">$p</a> ";
+		    $pl=$pl."<a href=\"$_pagelink$p\">$p</a>&nbsp;";
 		}
 	}
 
