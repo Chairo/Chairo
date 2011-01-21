@@ -8,6 +8,7 @@
 {{ block('style') }} {# 样式表 #}
 </head>
 <body>
+{% spaceless %}
 {# Header BOF #}
 {% include "header.twig" with CONFIG  %} {# 包含公共头文件 #}
 {# Header EOF #}
@@ -17,6 +18,7 @@
 </div>
 {# Main EOF #}
 {# Footer BOF #}
+{% endspaceless %}
 {% include "footer.twig" with CONFIG %} {# 包含尾文件 #}
 {# Footer EOF #}
 {{ block('script') }} {# 脚本 #}
