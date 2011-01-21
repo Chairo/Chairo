@@ -12,8 +12,8 @@ class Template {
         Twig_Autoloader::register();
         $loader = new Twig_Loader_Filesystem($config->template_dir);
         $this->t = new Twig_Environment($loader, array(
-                                                 'cache'=>false,    //$config->compile_dir,
-                                                 'auto_reload'=>true));
+                                                 'cache' => $config->compile_dir,
+                                                 'auto_reload' => true));
         $lexer = new Twig_Lexer($this->t, array(
             'tag_comment'  => array('{#', '#}'),    //注释
             'tag_block'    => array('{%', '%}'),    //tag
