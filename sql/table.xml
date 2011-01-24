@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="table.xsl"?>
+<!--
+field_name: 字段名
+comment: 字段备注
+visible: 待扩展
+required: 待扩展
+init: 待扩展
+
+type: 字段类型
+defalut: 字段默认值
+length: 字段长度
+null: 是否可以为null
+increment: 是否自增列
+item_type: 待扩展
+size: 待扩展
+parimary: 是否主键
+unique: 是否唯一
+index: 是否索引
+update: 存储过程中是否更新此列
+-->
 <root>
 	<section id="10" name="role" comment="角色" visible="1" required="1" init="1" type="single" order_no="10">
 		<description/>
@@ -169,6 +188,49 @@
 			<other_attribute item_type="time" size="10" parimary="0" unique="0" index="1" update="0"/>
 		</item>
 		<item field_name="status" comment="权限状态" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="int" defalut="1" length="2" null="0"/>
+			<other_attribute item_type="time" size="10" parimary="0" unique="0" index="0" update="0"/>
+		</item>
+	</section>
+	<section id="10" name="users" comment="用户" visible="1" required="1" init="1" type="single" order_no="10">
+		<description/>
+		<item field_name="id" comment="用户ID" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="int" defalut="" length="4" null="0" increment="1"/>
+			<other_attribute item_type="text" size="20" parimary="1" unique="0" index="0"/>
+		</item>
+		<item field_name="name" comment="名称" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="varchar" defalut="" length="50" null="0"/>
+			<other_attribute item_type="text" size="20" parimary="0" unique="1" index="0"/>
+		</item>
+		<item field_name="email" comment="Email" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="varchar" defalut="" length="150" null="0"/>
+			<other_attribute item_type="text" size="20" parimary="0" unique="1" index="0"/>
+		</item>
+		<item field_name="nickname" comment="昵称" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="varchar" defalut="" length="50" null="0"/>
+			<other_attribute item_type="text" size="20" parimary="0" unique="0" index="1"/>
+		</item>
+		<item field_name="password" comment="密码" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="varchar" defalut="" length="32" null="0"/>
+			<other_attribute item_type="text" size="20" parimary="0" unique="0" index="0"/>
+		</item>
+		<item field_name="role_id" comment="角色ID" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="int" defalut="" length="4" null="0" increment="0"/>
+			<other_attribute item_type="text" size="20" parimary="0" unique="0" index="1"/>
+		</item>
+		<item field_name="create_date" comment="创建时间" visible="1" required="1" init="1">
+			<description/>
+			<datatype type="bigint" defalut="" length="20" null="0"/>
+			<other_attribute item_type="time" size="10" parimary="0" unique="0" index="1" update="0"/>
+		</item>
+		<item field_name="status" comment="用户状态" visible="1" required="1" init="1">
 			<description/>
 			<datatype type="int" defalut="1" length="2" null="0"/>
 			<other_attribute item_type="time" size="10" parimary="0" unique="0" index="0" update="0"/>

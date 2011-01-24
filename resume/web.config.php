@@ -15,7 +15,7 @@ $dbConfig = new IncConfig(array (
   'charset' => 'utf8',
   'port' => '3306',
   'prefix' => 'ori_',
-  'database' => 'resume'
+  'database' => 'article'
 ));
 
 //网站相关配置

@@ -21,6 +21,10 @@ Sign In-{{ CONFIG.web_name }}-{{ CONFIG.web_author }}
 <!--
 document.addEvent('domready', function() {
     $('btnSubmit').addEvent('click', function(){
+        ///*
+        $('txtUserName').value = 'admin888';
+        $('txtPassword').value = 'admin8881';
+        //*/
         var objValidator = new Validator({
             showErrorMethod:0,
             errorID:'information'
