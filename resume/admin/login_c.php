@@ -21,8 +21,21 @@ $_arr = login_c($dbConfig, $user_name);
 $_password = count($_arr)>0 ? $_arr[0]['password'] : '';
 $_id = count($_arr)>0 ? $_arr[0]['id'] : '0';
 
-if(md5(enCrypt($password)) == $_password) {
-    var_dump($_id); //登录成功，需要判断权限
-} else {
-    echo('not pass');
+md5(enCrypt($password)) == $_password ? checkRight($_id) : exit(json_encode(array('id'=>'-1','message'=>'密码错误')));
+
+function checkRight($dbConfig, $user_id) {
+    $_result = array();
+    $_db = Database::getDatebase('Mysqli');
+    $_conn = $_db->open($dbConfig);
+    $_db->setQuery("SELECT `id`, `password` FROM users WHERE `name` = '$name'");
+    $_rs = $_db->executeQuery($_conn);
+    while($row = $_db->getArray($_rs)) {
+        $_result[] = array('id' => $row['id'],
+                           'password' => $row['password']
+                          );
+    }
+    $_db->close($_conn);
+    unset($_conn);
+    unset($_db);
+    return $_result;
 }
