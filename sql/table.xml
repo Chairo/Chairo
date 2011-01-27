@@ -96,7 +96,7 @@ update: 存储过程中是否更新此列
 		<item field_name="name" comment="资源名称" visible="1" required="1" init="1">
 			<description/>
 			<datatype type="varchar" defalut="" length="50" null="0"/>
-			<other_attribute item_type="text" size="20" parimary="0" unique="0" index="0"/>
+			<other_attribute item_type="text" size="20" parimary="0" unique="1" index="0"/>
 		</item>
 		<item field_name="description" comment="资源描述" visible="1" required="1" init="1">
 			<description/>

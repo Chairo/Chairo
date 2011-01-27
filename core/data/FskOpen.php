@@ -10,7 +10,7 @@ class FskOpen implements IGetcontent {
     private $_data;
 
     public function open(IncConfig $config) {
-        if('' == $config->method) {strToUpper($config->method) = 'GET';}
+        if('' == $config->method) {$config->method = 'GET';}
         if('' == $config->port) {$config->port = '80';}
         if('' == $config->url) {$config->url = '/';}
         if('' == $config->refer) {$config->refer = '';}
